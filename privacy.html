@@ -1,12 +1,13 @@
 <!doctype html>
-<!-- DRAFT privacy policy (ADR-024; docs/legal/research-2026-10.md §5, corrected against the code). Pending the lawyer's
-     review: the address, the regulator licence and the DPO are added once they exist. A material change re-asks
-     consent in the app (bump the consent version). The contact address is CONTACT_EMAIL in routes.ts. -->
+<!-- The privacy policy, version 5 (final, ADR-054; docs/legal/README.md). Served at GET /privacy and exported to
+     exports/privacy.html for GitHub Pages (api/src/modules/pages/export.ts). A material change is a new version here and, if
+     the consent screen's words change, a new consent version (app/src/copy/consent.ts + a migration). The contact
+     address is CONTACT_EMAIL in routes.ts. -->
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>سياسة الخصوصية · تاريخ بالهزار</title>
+<title>سياسة الخصوصية · أبو العُريف</title>
 <style>
 body { margin: 0; background: #2B1B54; color: #FFFFFF; font: 17px/1.7 system-ui, -apple-system, "Segoe UI", Tahoma, sans-serif; }
 main { max-width: 680px; margin: 0 auto; padding: 32px 16px; }
@@ -19,6 +20,8 @@ th, td { text-align: start; vertical-align: top; padding: 6px 8px; border-bottom
 th { color: #FFFFFF; }
 .meta { color: #B8AEDB; font-size: 14px; margin: 0 0 12px; }
 .lang { margin: 0 0 16px; }
+.summary { background: #3A2670; border-radius: 14px; padding: 4px 18px 10px; margin: 16px 0; }
+.summary h2 { margin-top: 14px; color: #FFD23F; }
 section + section { margin-top: 48px; padding-top: 24px; border-top: 3px solid #4A3784; }
 a { color: #3DDBD9; overflow-wrap: anywhere; }
 </style>
@@ -26,195 +29,275 @@ a { color: #3DDBD9; overflow-wrap: anywhere; }
 <body>
 <main>
 <section id="ar">
-  <h1>سياسة الخصوصية: تطبيق «تاريخ بالهزار»</h1>
-  <p class="meta">تاريخ السريان: ٢٩ أكتوبر ٢٠٢٦ · الإصدار ١</p>
+  <h1>سياسة الخصوصية: تطبيق «أبو العُريف»</h1>
+  <p class="meta">تطبيق من قول اميم · تاريخ السريان: ١٦ نوفمبر ٢٠٢٦ · الإصدار ٥</p>
   <p class="lang"><a href="#en" lang="en" dir="ltr">English version below</a></p>
 
+  <div class="summary">
+    <h2>الخلاصة</h2>
+    <ul>
+      <li>بنسجّل اللي التطبيق محتاجه بس عشان يشتغل: حسابك، بياناتك الأساسية، وإجاباتك وتقدّمك.</li>
+      <li>مش بنسجّل أي حاجة عن لعبك قبل ما توافق إنت وولي أمرك.</li>
+      <li>مفيش إعلانات، ومفيش أدوات تتبّع، ومش بنبيع بياناتك لأي حد.</li>
+      <li>اللي بيظهر للطلبة التانيين هو اليوزرنيم بتاعك ونقطك (وفي مسابقات المدارس اسم مدرستك)، واسمك الحقيقي مش بيظهر. وتقدر تخفي نفسك من الترتيب في أي وقت.</li>
+      <li>بياناتك محفوظة على خوادم في فرانكفورت، ألمانيا.</li>
+      <li>تقدر تمسح حسابك وكل بياناتك في أي وقت من «حسابي».</li>
+      <li>لأي سؤال: <a href="mailto:app@2oolameme.com">app@2oolameme.com</a></li>
+    </ul>
+  </div>
+
   <h2>١. مين إحنا</h2>
-  <p>«تاريخ بالهزار» تطبيق مجاني لمذاكرة مادة التاريخ لطلاب الصف الثاني الثانوي (البكالوريا المصرية). المسؤول عن بياناتك (المتحكم فيها) هو شركة <strong>Trinelabs</strong>. لأي سؤال عن بياناتك كلّمنا على app@2oolameme.com.</p>
+  <p>«أبو العُريف» تطبيق مجاني لمذاكرة مادة التاريخ لطلاب الصف الثاني الثانوي (البكالوريا المصرية)، من قول اميم (2oolameme). المسؤول عن بياناتك (المتحكم فيها) هو شركة <strong>Trinelabs</strong>، صاحبة علامة قول اميم.</p>
+  <p>لأي حاجة تخص بياناتك، بما فيها التواصل مع مسؤول حماية البيانات عندنا، ابعت على <a href="mailto:app@2oolameme.com">app@2oolameme.com</a>.</p>
   <p>التطبيق مش تابع لوزارة التربية والتعليم ولا معتمد منها.</p>
 
-  <h2>٢. التطبيق لطلاب أقل من ١٨ سنة</h2>
-  <p>كل مستخدمينا تقريبًا أقل من ١٨ سنة، وبياناتهم بيانات حساسة. علشان كده:</p>
+  <h2>٢. التطبيق لطلاب من ١٥ لـ١٨ سنة</h2>
   <ul>
-    <li>مش بنسجّل أي حاجة عن لعبك قبل موافقتك وموافقة ولي أمرك على شاشة الموافقة.</li>
-    <li>بنجمع أقل قدر ممكن من البيانات.</li>
-    <li>مفيش إعلانات، ومفيش أدوات تتبّع أو تحليلات من شركات تانية جوه التطبيق، ومش بنبيع بياناتك، ومش بنستخدمها في تسويق.</li>
+    <li>التطبيق معمول لطلاب تانية ثانوي، وأغلبهم بين ١٥ و١٨ سنة. بيانات اللي أقل من ١٨ سنة القانون بيعتبرها بيانات حساسة، فبنتعامل معاها بحرص زيادة، وبنجمع أقل قدر ممكن منها.</li>
+    <li>اللائحة التنفيذية لقانون حماية البيانات الشخصية (قرار وزير الاتصالات وتكنولوجيا المعلومات رقم ٨١٦ لسنة ٢٠٢٥) بتسمح إن الطالب من ١٥ لـ١٨ سنة يوافق بنفسه. ومع ذلك بنطلب الاتنين على شاشة الموافقة: موافقتك إنت، وتأكيد إن ولي أمرك قرا ووافق. والتطبيق مش بيسجّل أي حاجة عن لعبك قبلهم.</li>
+    <li>التطبيق مش لحد أقل من ١٥ سنة. لو عرفنا إن حد أقل من ١٥ عمل حساب، بنمسحه. ولو إنت ولي أمر وعندك سؤال أو عايز تمسح حساب ابنك أو بنتك، ابعتلنا.</li>
   </ul>
 
   <h2>٣. البيانات اللي بنجمعها</h2>
   <ul>
-    <li><strong>من جوجل أو Apple لما تسجّل دخول:</strong> معرّف الحساب وبريدك الإلكتروني. ومن جوجل كمان الاسم والصورة اللي على الحساب (ومن Apple الاسم لو اخترت تبعته). دول بيتحفظوا عند خدمة الدخول بتاعتنا (Supabase Auth) وبنستخدمهم للدخول بس، ومحدش بيشوفهم. ولو دخلت بـ Apple على آيفون، بنحتفظ برمز من Apple متشفّر، عشان نقدر نلغي ربط حسابك بالتطبيق لما تمسحه.</li>
-    <li><strong>اللي إنت بتكتبه:</strong> اسمك الأول، صفّك، محافظتك، مدرستك لو اخترتها (أو اسم مدرسة طلبت إضافتها)، وإنت فين في المنهج.</li>
-    <li><strong>لعبك وتقدّمك:</strong> إجاباتك على الأسئلة ووقتها (بساعة الخادم)، ونقطك وخبرتك، وسلسلة أيامك، والدروس اللي خلّصتها، ومستواك في كل جزء من المنهج.</li>
-    <li><strong>البلاغات:</strong> لو بلّغت عن اسم في الترتيب (والسبب لو كتبته)، أو حد بلّغ عن اسمك.</li>
+    <li><strong>من جوجل أو Apple لما تسجّل دخول:</strong> معرّف الحساب وبريدك الإلكتروني. ومن جوجل كمان الاسم والصورة اللي على الحساب (ومن Apple الاسم لو اخترت تبعته). دول بيتحفظوا عند خدمة الدخول بتاعتنا (Supabase Auth)، وبنستخدمهم للدخول ولما تطلب حاجة تخص بياناتك بس، ومحدش بيشوفهم. ولو دخلت بـ Apple على آيفون، بنحتفظ برمز من Apple متشفّر، عشان نقدر نلغي ربط حسابك بالتطبيق لما تمسحه.</li>
+    <li><strong>اليوزرنيم:</strong> اسم بتختاره إنت أول ما تبدأ، ومحدش غيرك يقدر ياخده. بيعدّي على فحص تلقائي (كلام مش لائق، أسماء محجوزة، أرقام تليفونات) وبعدها بيظهر على طول، وتقدر تغيّره مرة كل ٣٠ يوم. بنحتفظ بيه وبوقت آخر تغيير ليه.</li>
+    <li><strong>اللي إنت بتكتبه:</strong> اسمك الأول (مش بيظهر لحد)، صفّك، محافظتك، نوع مدرستك، مدرستك لو اخترتها (أو اسم مدرسة طلبت إضافتها)، وإنت فين في المنهج.</li>
+    <li><strong>إعدادات المذاكرة:</strong> ميعاد امتحانك وأيام المذاكرة لو حدّدتهم، وميعاد التذكير، وأنهي تنبيهات عايزها.</li>
+    <li><strong>لعبك وتقدّمك:</strong> إجاباتك على الأسئلة ووقتها (بساعة الخادم)، ونقطك وخبرتك، والأيام اللي لعبت فيها ورا بعض، والدروس والميداليات والكروت اللي خدتها، ونتايج الامتحانات التجريبية والألغاز، ومستواك في كل جزء من المنهج.</li>
+    <li><strong>المسابقات:</strong> نقطك وترتيبك في كل مسابقة، ومدرستك وقت ما المسابقة بدأت. ولو كسبت: مركزك، وكود الفوز، وكود الهدية اللي اتدالك، وإذا كانت الجايزة اتسلّمت.</li>
+    <li><strong>الرسايل:</strong> الرسايل اللي بنبعتها جوه التطبيق، وإذا كنت قريتها.</li>
+    <li><strong>الإشعارات:</strong> لو سمحت بالإشعارات، بنحتفظ برمز الإشعارات بتاع تليفونك عشان نبعتلك التذكير ورسايلنا، وبنسجّل آخر مرة بعتنالك.</li>
+    <li><strong>البلاغات:</strong> لو بلّغت عن يوزرنيم (والسبب لو كتبته)، أو حد بلّغ عن اليوزرنيم بتاعك (ومعاه اليوزرنيم اللي كان ظاهر وقتها).</li>
     <li><strong>إثبات الموافقة:</strong> نسخة نص الموافقة اللي وافقت عليه، ووقتها، وإنك وافقت وإن ولي أمرك وافق، ونسخة التطبيق.</li>
-    <li><strong>سجلات تقنية:</strong> سجلات الخادم بتاعنا فيها نوع الطلب ومعرّفات متشفّرة، من غير بريد ولا عنوان IP. لكن سجلات الاستضافة (Google Cloud) وخدمة الدخول (Supabase) بتسجّل تلقائيًا عنوان IP ونوع الجهاز أو المتصفح لكل طلب. سجلات Google Cloud بتتمسح بعد ٣٠ يوم، وسجلات خدمة الدخول بعد مدة أقصر.</li>
+    <li><strong>سجلات تقنية:</strong> سجلات الخادم بتاعنا فيها نوع الطلب ومعرّفات متشفّرة، من غير بريد ولا عنوان IP. لكن سجلات الاستضافة (Google Cloud) وخدمة الدخول (Supabase) بتسجّل تلقائيًا عنوان IP ونوع الجهاز أو المتصفح لكل طلب.</li>
   </ul>
+  <p>مش بنجمع موقعك، ولا جهات اتصالك، ولا صورك، ولا صوتك، ولا رقم تليفونك، ولا أي بيانات دفع.</p>
 
-  <h2>٤. بنستخدمها في إيه</h2>
+  <h2>٤. حاجات بتفضل على تليفونك بس</h2>
   <ul>
-    <li>نشغّل التطبيق: الأسئلة، والنقط، ومستواك، ومراجعة الأسئلة اللي غلطت فيها، وماتش اليوم.</li>
-    <li>نحسب لوحة الترتيب الأسبوعية، لو اخترت تظهر فيها.</li>
-    <li>نحسّن الأسئلة والتطبيق بأرقام مجمّعة مش مربوطة باسمك.</li>
-    <li>نحمي التطبيق: منع الغش، ومراجعة الأسماء، والبلاغات.</li>
+    <li>الإجابات اللي بتكتبها بإيدك في أسئلة المقال: مش بتتبعت لنا خالص، بيوصلنا بس إنت علّمت على أنهي نقط.</li>
+    <li>صورة تقريرك الأسبوعي (وفيها اسمك الأول): بتتعمل على تليفونك، ومش بتتبعت لأي حد إلا لو إنت شاركتها.</li>
+    <li>اختيار اللغة والصوت.</li>
   </ul>
-  <p>مش بنستخدم بياناتك في إعلانات، ولا بنعمل منها ملف عنك لأي غرض غير مذاكرتك جوه التطبيق.</p>
 
-  <h2>٥. الأساس القانوني</h2>
-  <p>موافقتك الصريحة وموافقة ولي أمرك، طبقًا لقانون حماية البيانات الشخصية رقم ١٥١ لسنة ٢٠٢٠ ولائحته التنفيذية. وتقدر تسحب موافقتك في أي وقت (بند ٩).</p>
+  <h2>٥. بنستخدمها في إيه، وعلى أي أساس</h2>
+  <ul>
+    <li>نشغّل التطبيق: الدروس، والأسئلة، والنقط، ومستواك، ومراجعة الأسئلة اللي غلطت فيها، وخطة المذاكرة.</li>
+    <li>نحسب الترتيب والمسابقات، ونسلّم الجوايز للي كسبوا.</li>
+    <li>نبعتلك التذكير والرسايل، على حسب إعداداتك.</li>
+    <li>نحسّن الأسئلة والتطبيق بأرقام مجمّعة مش مربوطة باسمك (زي فين الأسئلة الصعبة).</li>
+    <li>نحمي التطبيق: منع الغش، وفحص اليوزرنيم، والبلاغات، وأمان الخوادم.</li>
+  </ul>
+  <p>الأساس القانوني: موافقتك الصريحة وتأكيد ولي أمرك، طبقًا لقانون حماية البيانات الشخصية رقم ١٥١ لسنة ٢٠٢٠ ولائحته التنفيذية. وبنحتفظ بإثبات الموافقة وسجل إجراءات المشرفين عشان القانون بيلزمنا نثبت إننا ماشيين صح. وتقدر تسحب موافقتك في أي وقت (بند ٩).</p>
+  <p>مش بنستخدم بياناتك في إعلانات، ولا بنعمل منها ملف عنك لأي غرض غير مذاكرتك جوه التطبيق، ولا بناخد بيها قرارات تأثر عليك برّه التطبيق.</p>
 
   <h2>٦. مين بيشوف إيه</h2>
   <ul>
-    <li><strong>لوحة الترتيب:</strong> الظهور فيها مقفول من الأول. لو فعّلت «اظهر في الترتيب»، اسمك الأول بس ونقطك بيظهروا في ترتيب صفّك على مستوى الجمهورية، ولو اخترت مدرسة كمان في ترتيب مدرستك لزمايلك فيها بس. تقدر تقفلها في أي وقت من «حسابي».</li>
+    <li><strong>الترتيب والمسابقات:</strong> الظهور مفتوح من الأول («اظهر في الترتيب»). وإنت ظاهر، اليوزرنيم بتاعك ونقطك بس بيظهروا في ترتيب صفّك على مستوى الجمهورية وفي المسابقات، ولو اخترت مدرسة كمان في ترتيب مدرستك لزمايلك فيها بس. اسمك الحقيقي مش بيظهر. في المسابقات اللي فيها ترتيب للمدارس، اسم مدرستك ممكن يظهر جنب اليوزرنيم بتاعك. لو حد بلّغ عن اليوزرنيم بتاعك ممكن نبدّله باسم مؤقت وتختار اسم تاني. تقدر تقفل ظهورك في أي وقت من شاشة الموافقة أو من «حسابي»، وساعتها مش بتتحسب في الترتيب.</li>
+    <li><strong>«تحدّى صاحبك»:</strong> لما يكون شغّال وتبعت لصاحبك لينك تحدّي، اللي بيلعبه بيشوف اليوزرنيم بتاعك ونتيجتك بس.</li>
     <li><strong>إحنا:</strong> عدد محدود من المشرفين، بصلاحيات محمية بتحقق ثنائي، وكل اللي بيعملوه متسجّل.</li>
-    <li><strong>مزوّدو الخدمة:</strong> Google Cloud (الاستضافة) وSupabase (قاعدة البيانات وخدمة الدخول)، وهما بيعالجوا البيانات بالنيابة عننا بعقود بتلزمهم بحمايتها. وجوجل وApple للدخول بس.</li>
-    <li>مش بنبيع ولا بنأجّر بياناتك لأي حد.</li>
+    <li><strong>مزوّدو الخدمة:</strong> شركات بتشغّل حاجات بالنيابة عننا، بعقود بتلزمهم يحموا البيانات ويستخدموها لشغلنا بس:
+      <table>
+        <tr><th>الشركة</th><th>بتعمل إيه</th><th>فين</th></tr>
+        <tr><td>Google Cloud</td><td>استضافة الخادم وسجلاته</td><td>فرانكفورت، ألمانيا</td></tr>
+        <tr><td>Supabase</td><td>قاعدة البيانات وخدمة الدخول</td><td>فرانكفورت، ألمانيا</td></tr>
+        <tr><td>Expo</td><td>توصيل الإشعارات (بيوصله رمز الإشعارات ونص الإشعار بس)</td><td>الولايات المتحدة</td></tr>
+        <tr><td>جوجل وApple</td><td>تسجيل الدخول، وتوصيل الإشعارات للتليفون</td><td>حسب كل شركة</td></tr>
+      </table>
+    </li>
+    <li>مش بنبيع ولا بنأجّر بياناتك لأي حد. وممكن نكشف بيانات بس لو جهة قضائية أو رسمية طلبتها بشكل قانوني.</li>
   </ul>
 
   <h2>٧. مكان حفظ البيانات</h2>
-  <p>بياناتك محفوظة على خوادم في <strong>فرانكفورت، ألمانيا</strong> (الاتحاد الأوروبي)، عند Google Cloud وSupabase. النقل ده بيتم بضمانات حماية مش أقل من القانون المصري.</p>
+  <p>بياناتك محفوظة على خوادم في <strong>فرانكفورت، ألمانيا</strong> (الاتحاد الأوروبي)، عند Google Cloud وSupabase، والإشعارات بتعدّي على Expo في الولايات المتحدة. يعني بياناتك بتتنقل برّه مصر، وده بيتم بموافقتك، وبضمانات حماية مش أقل من القانون المصري، وفي الحدود اللي بيسمح بيها مركز حماية البيانات الشخصية.</p>
 
   <h2>٨. بنحتفظ بيها قد إيه</h2>
   <table>
     <tr><th>البيانات</th><th>المدة</th></tr>
-    <tr><td>حسابك وبياناتك وتقدّمك</td><td>لحد ما تمسح حسابك.</td></tr>
-    <tr><td>سجل الإجابات المرتبط بيك</td><td>لحد ما تمسح حسابك.</td></tr>
+    <tr><td>حسابك وبياناتك وتقدّمك ومسابقاتك</td><td>لحد ما تمسح حسابك</td></tr>
+    <tr><td>تفاصيل خطوات اللعب جوه الجلسة</td><td>بتتمسح بعد ٧ أيام (بتفضل الإجابة النهائية بس)</td></tr>
+    <tr><td>تحدّيات «تحدّى صاحبك»</td><td>بتتمسح بعد ٣٠ يوم من انتهائها</td></tr>
     <tr><td>تسجيل دخول من غير ما تكمّل الموافقة</td><td>بيتمسح بعد ٧ أيام</td></tr>
     <tr><td>سجلات الاستضافة وخدمة الدخول (فيها IP)</td><td>لحد ٣٠ يوم</td></tr>
   </table>
-  <p><strong>بعد مسح الحساب</strong> بنمسح حسابك عند خدمة الدخول (البريد والاسم والصورة)، وكل بياناتك وتقدّمك وبلاغاتك، وبنلغي ربط Apple لو كان عندنا رمزه. بيفضل بس:</p>
+  <p><strong>بعد مسح الحساب</strong> بنمسح حسابك عند خدمة الدخول (البريد والاسم والصورة)، وكل بياناتك وتقدّمك ومسابقاتك وبلاغاتك ورمز الإشعارات، وبنلغي ربط Apple لو كان عندنا رمزه. المسح بيبدأ على طول وبيخلص عادة في دقايق. بيفضل بس:</p>
   <ul>
     <li>إجابات من غير أي حاجة تدل عليك، لتحسين الأسئلة؛</li>
     <li>سجل من غير اسم ولا معرّف إن الموافقة اتعملت (نسخة النص، ووقتها، والتأكيدين)، كإثبات قانوني؛</li>
-    <li>سجل إجراءات المشرفين لو كان فيه إجراء على حسابك، من غير اسمك.</li>
+    <li>سجل إجراءات المشرفين لو كان فيه إجراء على حسابك، من غير اسمك؛</li>
+    <li>كود هدية كان اتدالك بيفضل محسوب إنه اتدّى، من غير ما يتربط بيك، عشان مايتديش لحد تاني.</li>
   </ul>
+  <p>لو كسبت جايزة ومسحت حسابك قبل ما تستلمها، كود الفوز بيتمسح معاه ومش هنقدر نسلّمها.</p>
 
   <h2>٩. حقوقك</h2>
   <p>من حقك، إنت وولي أمرك، ومجانًا:</p>
   <ul>
-    <li>تعرف إحنا عندنا إيه عنك وتاخد نسخة منه (ابعتلنا وهنبعتهولك)؛</li>
-    <li>تصحّح بياناتك: من «حسابي» ← «عدّل بياناتك»، أو بمراسلتنا؛</li>
-    <li>تمسح حسابك وبياناتك: من «حسابي» ← «امسح حسابي» جوه التطبيق، أو من <a href="https://tarikh-api-prod-807650658389.europe-west3.run.app/delete">صفحة مسح الحساب</a> (لحسابات جوجل). ولو دخلت بـ Apple من أندرويد، تقدر كمان تشيل التطبيق من إعدادات حساب Apple بتاعك (تسجيل الدخول بـ Apple)؛</li>
-    <li>تسحب موافقتك (مسح الحساب بيوقف كل التسجيل) أو تقفل ظهورك في الترتيب في أي وقت؛</li>
+    <li>تعرف إحنا عندنا إيه عنك وتاخد نسخة منه؛</li>
+    <li>تصحّح بياناتك أو تكمّلها: من «حسابي» ← «عدّل بياناتك»، أو بمراسلتنا؛</li>
+    <li>تمسح حسابك وبياناتك: من «حسابي» ← «امسح حسابي» جوه التطبيق، أو من <a href="https://tarikh-api-prod-807650658389.europe-west3.run.app/delete">صفحة مسح الحساب</a> (لحسابات جوجل)، أو بمراسلتنا. ولو دخلت بـ Apple من أندرويد، تقدر كمان تشيل التطبيق من إعدادات حساب Apple بتاعك (تسجيل الدخول بـ Apple)؛</li>
+    <li>تسحب موافقتك في أي وقت: مسح الحساب بيوقف كل التسجيل. وتقدر تقفل ظهورك في الترتيب أو الإشعارات من غير ما تمسح حسابك؛</li>
     <li>تعترض على أي استخدام أو تطلب تقييده؛</li>
     <li>نبلّغك لو حصل اختراق يمس بياناتك.</li>
   </ul>
-  <p>راسلنا على <a href="mailto:app@2oolameme.com">app@2oolameme.com</a>، وهنرد خلال ٣٠ يوم بحد أقصى. ولو مش راضي عن ردّنا، من حقك تشتكي لـ«مركز حماية البيانات الشخصية».</p>
+  <p>ابعتلنا على <a href="mailto:app@2oolameme.com">app@2oolameme.com</a> من نفس البريد اللي بتدخل بيه، واكتب اليوزرنيم بتاعك، عشان نتأكد إنك صاحب الحساب. وهنرد عليك خلال ٦ أيام عمل من وصول طلبك. ولو مش راضي عن ردّنا، من حقك تشتكي لـ«مركز حماية البيانات الشخصية».</p>
 
   <h2>١٠. الأمان</h2>
   <ul>
-    <li>التشفير أثناء النقل.</li>
+    <li>التشفير أثناء النقل (HTTPS).</li>
     <li>قاعدة بيانات مقفولة، والتطبيق مش بيوصلها مباشرة: كل حاجة بتعدّي على الخادم بتاعنا.</li>
     <li>معرّفات متشفّرة في سجلاتنا، ورمز Apple متشفّر.</li>
     <li>صلاحيات مشرفين محدودة ومحمية بتحقق ثنائي.</li>
   </ul>
-  <p>ولو حصل اختراق، هنبلّغ المركز خلال ٧٢ ساعة، ونبلّغك في المواعيد اللي القانون بيحددها.</p>
+  <p>ولو حصل اختراق يمس بياناتك، هنبلّغ مركز حماية البيانات الشخصية خلال ٧٢ ساعة، ونبلّغك خلال ٣ أيام عمل بعدها، جوه التطبيق أو على بريدك.</p>
 
-  <h2>١١. التعديلات</h2>
-  <p>لو غيّرنا السياسة دي أو نص الموافقة تغيير مهم، هنطلب موافقتك وموافقة ولي أمرك تاني جوه التطبيق قبل ما نكمّل.</p>
+  <h2>١١. المسابقات والجوايز</h2>
+  <p>الجوايز بتكون نسبة خصم على منتجات قول اميم. اللي بيكسب بيعرف في التطبيق نفسه: شاشة الفوز ورسالة، وفيهم كود الفوز وكود الهدية. مش بنبعت بياناتك لأي حد عشان الجايزة، ومش بنطلب منك رقم تليفون ولا عنوان. لو استخدمت كود الهدية في متجر قول اميم، اللي بتكتبه هناك (زي بيانات الطلب) بيخضع لشروط وسياسة المتجر. القواعد كاملة في <a href="terms.html#competitions">شروط الاستخدام</a>.</p>
 
-  <h2>١٢. المحتوى وحقوقه</h2>
+  <h2>١٢. التعديلات</h2>
+  <p>لو غيّرنا السياسة دي تغيير مهم، هنقولك جوه التطبيق، ولو التغيير بيمس اللي وافقت عليه هنطلب موافقتك وتأكيد ولي أمرك تاني قبل ما نكمّل. النسخة الحالية دايمًا على الصفحة دي برقم إصدارها وتاريخها.</p>
+
+  <h2>١٣. المحتوى وحقوقه</h2>
   <p>التطبيق مش تابع لوزارة التربية والتعليم. المعلومات من كتاب «التاريخ الوطني» للصف الثاني الثانوي، وكل معلومة عندنا مرجعها برقم الصفحة. لو لقيت غلطة، أو ليك حق في أي محتوى وعندك اعتراض، راسلنا على <a href="mailto:app@2oolameme.com">app@2oolameme.com</a> وهنراجعه خلال ٤٨ ساعة.</p>
 
   <h2>تواصل معانا</h2>
-  <p><a href="mailto:app@2oolameme.com">app@2oolameme.com</a> · Trinelabs</p>
+  <p><a href="mailto:app@2oolameme.com">app@2oolameme.com</a> · Trinelabs (قول اميم) · <a href="terms.html">شروط الاستخدام</a></p>
 </section>
 
 <section id="en" lang="en" dir="ltr">
   <p class="meta">The Arabic version is authoritative.</p>
-  <h1>Privacy Policy: «تاريخ بالهزار» (Tarikh)</h1>
-  <p class="meta">Effective: 29 October 2026 · Version 1</p>
+  <h1>Privacy Policy: «أبو العُريف» (Abo El 3oreef)</h1>
+  <p class="meta">An app by 2oolameme · Effective: 16 November 2026 · Version 5</p>
+
+  <div class="summary">
+    <h2>In short</h2>
+    <ul>
+      <li>We record only what the app needs to work: your account, your basic details, and your answers and progress.</li>
+      <li>We record nothing about your play until you and your guardian agree.</li>
+      <li>No ads, no tracking tools, and we never sell your data.</li>
+      <li>Other students see your username and points (and, in school competitions, your school), never your real name. You can hide from the rankings at any time.</li>
+      <li>Your data is stored on servers in Frankfurt, Germany.</li>
+      <li>You can delete your account and all your data at any time from the account screen.</li>
+      <li>Questions: <a href="mailto:app@2oolameme.com">app@2oolameme.com</a></li>
+    </ul>
+  </div>
 
   <h2>1. Who we are</h2>
-  <p>«تاريخ بالهزار» is a free history study app for grade-2 secondary students (Egyptian Baccalaureate). The controller of your data is <strong>Trinelabs</strong>. For any question about your data, write to app@2oolameme.com.</p>
+  <p>«أبو العُريف» is a free history study app for grade-2 secondary students (Egyptian Baccalaureate), by 2oolameme (قول اميم). The controller of your data is <strong>Trinelabs</strong>, which owns the 2oolameme brand.</p>
+  <p>For anything about your data, including reaching our data protection officer, write to <a href="mailto:app@2oolameme.com">app@2oolameme.com</a>.</p>
   <p>The app is not affiliated with or endorsed by the Ministry of Education.</p>
 
-  <h2>2. An app for under-18s</h2>
-  <p>Almost all our users are under 18, and their data is sensitive data. So:</p>
+  <h2>2. An app for students aged 15 to 18</h2>
   <ul>
-    <li>we record nothing about your play before you and your guardian consent on the consent screen;</li>
-    <li>we collect as little as possible;</li>
-    <li>there are no ads and no third-party tracking or analytics tools in the app, we don't sell your data, and we don't use it for marketing.</li>
+    <li>The app is made for grade-2 secondary students, most of them aged 15 to 18. The law treats the data of under-18s as sensitive data, so we handle it with extra care and collect as little as possible.</li>
+    <li>The Executive Regulations of the Personal Data Protection Law (Decree No. 816 of 2025 of the Minister of Communications and Information Technology) allow a student aged 15 to 18 to consent for themselves. Even so, the consent screen asks for both: your own consent and confirmation that your guardian has read it and agrees. The app records nothing about your play before that.</li>
+    <li>The app is not for anyone under 15. If we learn that someone under 15 has made an account, we delete it. If you are a parent or guardian with a question, or you want your child's account deleted, write to us.</li>
   </ul>
 
   <h2>3. What we collect</h2>
   <ul>
-    <li><strong>From Google or Apple when you sign in:</strong> the account identifier and your email address; from Google also the name and picture on the account (from Apple, the name if you choose to share it). They are held by our sign-in service (Supabase Auth), used for sign-in only, and never shown to anyone. If you sign in with Apple on an iPhone, we keep an encrypted token from Apple so we can unlink your account from the app when you delete it.</li>
-    <li><strong>What you enter:</strong> your first name, grade, governorate, your school if you pick one (or the name of a school you ask us to add), and where you are in the curriculum.</li>
-    <li><strong>Your play and progress:</strong> your answers and their timing (by the server's clock), points and XP, streaks, lessons completed, and your level in each part of the curriculum.</li>
-    <li><strong>Reports:</strong> if you report a name on the board (and the reason, if you write one), or someone reports yours.</li>
+    <li><strong>From Google or Apple when you sign in:</strong> the account identifier and your email address; from Google also the name and picture on the account (from Apple, the name if you choose to share it). They are held by our sign-in service (Supabase Auth), used only for sign-in and when you ask us about your data, and never shown to anyone. If you sign in with Apple on an iPhone, we keep an encrypted token from Apple so we can unlink your account from the app when you delete it.</li>
+    <li><strong>Your username:</strong> a name you choose when you start, unique to you. It goes through automatic checks (offensive words, reserved names, phone numbers) and then shows right away; you can change it once every 30 days. We keep it and when you last changed it.</li>
+    <li><strong>What you enter:</strong> your first name (never shown to anyone), grade, governorate, school type, your school if you pick one (or the name of a school you ask us to add), and where you are in the curriculum.</li>
+    <li><strong>Study settings:</strong> your exam date and study days if you set them, your reminder time, and which notifications you want.</li>
+    <li><strong>Your play and progress:</strong> your answers and their timing (by the server's clock), points and XP, the days you played in a row, the lessons, medals and cards you earned, your mock exam and puzzle results, and your level in each part of the curriculum.</li>
+    <li><strong>Competitions:</strong> your points and rank in each competition, and your school when it started. If you win: your place, your winning code, the gift code you were given, and whether the prize was handed over.</li>
+    <li><strong>Messages:</strong> the messages we send inside the app, and whether you read them.</li>
+    <li><strong>Notifications:</strong> if you allow notifications, we keep your phone's push token so we can send your reminder and our messages, and when we last sent you one.</li>
+    <li><strong>Reports:</strong> if you report a username (and the reason, if you write one), or someone reports yours (with the username shown at the time).</li>
     <li><strong>Proof of consent:</strong> the version of the consent text you accepted, when, that you and your guardian each confirmed, and the app version.</li>
-    <li><strong>Technical logs:</strong> our own server logs hold the request type and hashed identifiers, with no email or IP address. Our hosting (Google Cloud) and sign-in service (Supabase) automatically log the IP address and device or browser type of each request. Google Cloud logs are deleted after 30 days; sign-in service logs after a shorter period.</li>
+    <li><strong>Technical logs:</strong> our own server logs hold the request type and hashed identifiers, with no email or IP address. Our hosting (Google Cloud) and sign-in service (Supabase) automatically log the IP address and device or browser type of each request.</li>
   </ul>
+  <p>We don't collect your location, contacts, photos, voice, phone number or any payment details.</p>
 
-  <h2>4. What we use it for</h2>
+  <h2>4. What stays on your phone</h2>
   <ul>
-    <li>Running the app: questions, points, your level, reviewing questions you got wrong, and the daily match.</li>
-    <li>The weekly leaderboard, if you choose to appear on it.</li>
-    <li>Improving the questions and the app, using aggregate figures that aren't linked to your name.</li>
-    <li>Protecting the app: anti-cheating, name moderation and reports.</li>
+    <li>Answers you type in essay questions: never sent to us; we only receive which points you ticked.</li>
+    <li>Your weekly report image (it includes your first name): made on your phone and sent to no one unless you share it.</li>
+    <li>Your language and sound choices.</li>
   </ul>
-  <p>We don't use your data for advertising, and we don't build a profile of you for any purpose other than your studying inside the app.</p>
 
-  <h2>5. Legal basis</h2>
-  <p>Your explicit consent and your guardian's consent, under Personal Data Protection Law No. 151 of 2020 and its Executive Regulations. You can withdraw consent at any time (section 9).</p>
+  <h2>5. What we use it for, and on what basis</h2>
+  <ul>
+    <li>Running the app: lessons, questions, points, your level, reviewing questions you got wrong, and your study plan.</li>
+    <li>Rankings and competitions, and handing prizes to winners.</li>
+    <li>Sending your reminder and our messages, as your settings allow.</li>
+    <li>Improving the questions and the app with aggregate figures not linked to your name (such as which questions are hard).</li>
+    <li>Protecting the app: anti-cheating, username checks, reports and server security.</li>
+  </ul>
+  <p>Legal basis: your explicit consent and your guardian's confirmation, under Personal Data Protection Law No. 151 of 2020 and its Executive Regulations. We keep the proof of consent and the admin action log because the law requires us to show we comply. You can withdraw consent at any time (section 9).</p>
+  <p>We don't use your data for advertising, we don't build a profile of you for any purpose other than your studying inside the app, and we make no decisions with it that affect you outside the app.</p>
 
   <h2>6. Who sees what</h2>
   <ul>
-    <li><strong>Leaderboard:</strong> off by default. If you turn on "show me on the board", only your first name and points appear on your grade's national board and, if you picked a school, on your school's board, visible only to schoolmates. You can turn it off at any time in the account screen.</li>
+    <li><strong>Rankings and competitions:</strong> on by default ("show me in the ranking"). While it is on, only your username and points appear on your grade's national ranking and in competitions and, if you picked a school, on your school's ranking, visible only to schoolmates. Your real name is never shown. In competitions that rank schools, your school's name may appear next to your username. If your username is reported, we may replace it with a temporary name and ask you to choose another. You can turn this off at any time on the consent screen or in the account screen; you are then not counted in the rankings.</li>
+    <li><strong>Challenge a friend:</strong> when it is available and you send a friend a challenge link, whoever plays it sees only your username and score.</li>
     <li><strong>Us:</strong> a small number of admins, with two-factor-protected access and every action logged.</li>
-    <li><strong>Service providers:</strong> Google Cloud (hosting) and Supabase (database and sign-in) process data on our behalf under contracts that require them to protect it. Google and Apple are used for sign-in only.</li>
-    <li>We never sell or rent your data.</li>
+    <li><strong>Service providers:</strong> companies that run parts of the service on our behalf, under contracts that require them to protect the data and use it only for our service:
+      <table>
+        <tr><th>Company</th><th>What it does</th><th>Where</th></tr>
+        <tr><td>Google Cloud</td><td>Hosting the server and its logs</td><td>Frankfurt, Germany</td></tr>
+        <tr><td>Supabase</td><td>Database and sign-in service</td><td>Frankfurt, Germany</td></tr>
+        <tr><td>Expo</td><td>Delivering notifications (it receives only the push token and the notification text)</td><td>United States</td></tr>
+        <tr><td>Google and Apple</td><td>Sign-in, and delivering notifications to the phone</td><td>Their own locations</td></tr>
+      </table>
+    </li>
+    <li>We never sell or rent your data. We disclose data only if a court or authority lawfully requires it.</li>
   </ul>
 
   <h2>7. Where data is stored</h2>
-  <p>On servers in <strong>Frankfurt, Germany</strong> (European Union), at Google Cloud and Supabase. This transfer is made with protection no lower than Egyptian law requires.</p>
+  <p>On servers in <strong>Frankfurt, Germany</strong> (European Union), at Google Cloud and Supabase; notifications pass through Expo in the United States. This means your data is transferred outside Egypt. That happens with your consent, with protection no lower than Egyptian law requires, and within the limits the Personal Data Protection Center allows.</p>
 
   <h2>8. How long we keep it</h2>
   <table>
     <tr><th>Data</th><th>Period</th></tr>
-    <tr><td>Your account, data and progress</td><td>Until you delete your account.</td></tr>
-    <tr><td>Answer history linked to you</td><td>Until you delete your account.</td></tr>
+    <tr><td>Your account, data, progress and competitions</td><td>Until you delete your account</td></tr>
+    <tr><td>Step-by-step details inside a game session</td><td>Deleted after 7 days (only the final answer stays)</td></tr>
+    <tr><td>"Challenge a friend" challenges</td><td>Deleted 30 days after they expire</td></tr>
     <tr><td>Sign-ins that never completed consent</td><td>Deleted after 7 days</td></tr>
     <tr><td>Hosting and sign-in service logs (with IPs)</td><td>Up to 30 days</td></tr>
   </table>
-  <p><strong>After account deletion</strong> we delete your sign-in account (email, name, picture), all your data, progress and reports, and revoke the Apple link if we hold its token. Only these remain:</p>
+  <p><strong>After account deletion</strong> we delete your sign-in account (email, name, picture), all your data, progress, competitions, reports and push token, and revoke the Apple link if we hold its token. Deletion starts at once and usually finishes within minutes. Only these remain:</p>
   <ul>
     <li>answers with nothing that identifies you, used to improve questions;</li>
     <li>a record with no name or identifier that consent was given (text version, date, and the two confirmations), as legal proof;</li>
-    <li>the admin action log, if an admin acted on your account, without your name.</li>
+    <li>the admin action log, if an admin acted on your account, without your name;</li>
+    <li>a gift code you were given stays marked as given, no longer linked to you, so it isn't handed to anyone else.</li>
   </ul>
+  <p>If you win a prize and delete your account before receiving it, your winning code is deleted with it and we can no longer hand the prize over.</p>
 
   <h2>9. Your rights</h2>
   <p>You and your guardian can, free of charge:</p>
   <ul>
-    <li>know what we hold about you and get a copy (write to us and we'll send it);</li>
-    <li>correct your data: in the app's account screen (edit your details), or by writing to us;</li>
-    <li>delete your account and data: in the app's account screen ("delete my account"), or on the <a href="https://tarikh-api-prod-807650658389.europe-west3.run.app/delete">account deletion page</a> (Google accounts). If you signed in with Apple on Android, you can also remove the app in your Apple account settings (Sign in with Apple);</li>
-    <li>withdraw consent (deleting the account stops all recording) or hide yourself from the leaderboard at any time;</li>
+    <li>know what we hold about you and get a copy;</li>
+    <li>correct or complete your data: in the account screen (edit your details), or by writing to us;</li>
+    <li>delete your account and data: in the account screen ("delete my account"), on the <a href="https://tarikh-api-prod-807650658389.europe-west3.run.app/delete">account deletion page</a> (Google accounts), or by writing to us. If you signed in with Apple on Android, you can also remove the app in your Apple account settings (Sign in with Apple);</li>
+    <li>withdraw consent at any time: deleting the account stops all recording. You can also turn off the rankings or notifications without deleting your account;</li>
     <li>object to, or ask us to restrict, a use of your data;</li>
     <li>be told if a breach affects your data.</li>
   </ul>
-  <p>Write to <a href="mailto:app@2oolameme.com">app@2oolameme.com</a>; we reply within 30 days at most. If you're not satisfied, you can complain to the Personal Data Protection Center.</p>
+  <p>Write to <a href="mailto:app@2oolameme.com">app@2oolameme.com</a> from the email you sign in with and include your username, so we can check the account is yours. We reply within 6 working days of receiving your request. If you're not satisfied, you can complain to the Personal Data Protection Center.</p>
 
   <h2>10. Security</h2>
   <ul>
-    <li>Encryption in transit.</li>
+    <li>Encryption in transit (HTTPS).</li>
     <li>A locked-down database the app can't reach directly: everything goes through our server.</li>
     <li>Hashed identifiers in our logs; the Apple token is encrypted.</li>
     <li>Limited admin access, protected with two-factor authentication.</li>
   </ul>
-  <p>If a breach happens, we notify the Center within 72 hours and tell you within the times the law sets.</p>
+  <p>If a breach affects your data, we notify the Personal Data Protection Center within 72 hours and tell you within 3 working days after that, in the app or by email.</p>
 
-  <h2>11. Changes</h2>
-  <p>If we change this policy or the consent text materially, we ask for your and your guardian's consent again in the app before continuing.</p>
+  <h2>11. Competitions and prizes</h2>
+  <p>Prizes are percentage discounts on 2oolameme products. Winners find out in the app itself: a winner screen and a message, with the winning code and the gift code. We don't pass your data to anyone for a prize, and we don't ask for your phone number or address. If you use the gift code at the 2oolameme store, what you enter there (such as order details) falls under the store's own terms and policy. The full rules are in the <a href="terms.html#competitions-en">terms of use</a>.</p>
 
-  <h2>12. Content and rights</h2>
+  <h2>12. Changes</h2>
+  <p>If we change this policy materially, we tell you in the app, and if the change affects what you agreed to, we ask for your consent and your guardian's confirmation again before continuing. The current version is always on this page with its version number and date.</p>
+
+  <h2>13. Content and rights</h2>
   <p>The app is not affiliated with the Ministry of Education. The facts come from the textbook «التاريخ الوطني» (grade 2 secondary), and each one is referenced to its page. If you find a mistake, or you hold rights in any content and object to its use, write to <a href="mailto:app@2oolameme.com">app@2oolameme.com</a>; we review it within 48 hours.</p>
 
   <h2>Contact</h2>
-  <p><a href="mailto:app@2oolameme.com">app@2oolameme.com</a> · Trinelabs</p>
+  <p><a href="mailto:app@2oolameme.com">app@2oolameme.com</a> · Trinelabs (2oolameme) · <a href="terms.html#en">Terms of use</a></p>
 </section>
 </main>
 </body>
